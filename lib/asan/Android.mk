@@ -17,6 +17,11 @@
 
 LOCAL_PATH:= $(call my-dir)
 
+ifeq ($(BONE_STOCK),true)
+MAXIMUM_OVERDRIVE := true
+endif
+
+ifneq ($(MAXIMUM_OVERDRIVE),true)
 ifeq ($(TARGET_ARCH),arm)
 
 ASAN_NEEDS_SEGV=0
@@ -211,3 +216,4 @@ include external/libcxx/libcxx.mk
 include $(BUILD_EXECUTABLE)
 
 endif # ifeq($(TARGET_ARCH),arm)
+endif # MAXIMUM_OVERDRIVE
