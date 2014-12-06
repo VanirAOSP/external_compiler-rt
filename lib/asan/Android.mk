@@ -18,7 +18,7 @@
 LOCAL_PATH:= $(call my-dir)
 
 ifeq ($(BONE_STOCK),true)
-MAXIMUM_OVERDRIVE := true
+MAXIMUM_OVERDRIVE := false
 endif
 
 ifneq ($(MAXIMUM_OVERDRIVE),true)
